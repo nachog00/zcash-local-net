@@ -7,6 +7,11 @@ use std::{
 use cargo_readme::generate_readme;
 
 pub fn main() {
+    update_readme();
+}
+
+/// This function checks if there are changes in lib.rs and updates the readme.md with doc comments in it
+fn update_readme() {
     println!("cargo::rerun-if-changed=src/lib.rs");
     let crate_dir = PathBuf::from(std::env::var("CARGO_MANIFEST_DIR").unwrap());
     let source_path = crate_dir.join("src/lib.rs");
