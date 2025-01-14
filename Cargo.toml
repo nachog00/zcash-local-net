@@ -3,6 +3,7 @@ name = "zcash_local_net"
 version = "0.1.0"
 edition = "2021"
 resolver = "2"
+build="src/build.rs"
 
 [features]
 client = [ "dep:zcash_client_backend", "dep:zingo-netutils", "dep:zingolib" ]
@@ -62,3 +63,6 @@ tracing-subscriber = "0.3.15"
 
 # Runtime
 tokio = "1.25.0"
+
+[build-dependencies]
+cargo-readme = "3.3.1"
