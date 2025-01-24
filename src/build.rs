@@ -1,4 +1,8 @@
+#[cfg(not(feature = "offline"))]
 mod fetcher;
 fn main() {
-    fetcher::main();
+    #[cfg(not(feature = "offline"))]
+    {
+        fetcher::main();
+    }
 }

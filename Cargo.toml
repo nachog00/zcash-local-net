@@ -13,6 +13,10 @@ github = { repository = "zingolabs/zcash-local-net" }
 default = [ "test_fixtures" ]
 test_fixtures = [ "client", "dep:tonic", "dep:tokio", "dep:tokio-stream"]
 client = [ "dep:zcash_client_backend", "dep:zingo-netutils", "dep:zingolib" ]
+offline = [ "default" ]
+
+[profile.dev.build-override]
+debug = true # when possible
 
 [dependencies]
 # Zcash
